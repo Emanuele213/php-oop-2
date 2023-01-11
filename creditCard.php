@@ -1,5 +1,4 @@
 <?php
-
 class creditCard 
 {
     private $cvv;
@@ -15,15 +14,22 @@ class creditCard
 
   public function validateCreditCard()
   {
-    $this->expirationDate = $timestamp = strtotime("+1 day");
-
-    if ($this->expirationDate < $timestamp)
+    $year = intval(date("Y"));
+    $month = intval(date("m"));
+    if ($this->expirationDate->year > $year)
     {
-        echo "La carta non valida";
+      echo "Carta valida";
+    }
+    else if ($this->expirationDate->year < $year)
+    {
+      throw new Exception("Carta scaduta");
+    }
+    else if ($this->expirationDate->month < $month) {
+      throw new Exception("Carta scaduta");
     }
     else
     { 
-        echo "La carta valida"; 
+      echo "Carta valida";
     }
   }
 }
