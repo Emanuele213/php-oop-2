@@ -1,11 +1,12 @@
 <?php
 class creditCard 
 {
-    private $cvv;
-    private $number;
-    private $expirationDate;
+  use Position;
+  private $cvv;
+  private $number;
+  private $expirationDate;
 
-    public function __construct($number, $cvv, $expirationDate)
+  public function __construct($number, $cvv, $expirationDate)
 	{
 		$this->cvv = $cvv;
 		$this->number = $number;

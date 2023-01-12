@@ -29,6 +29,11 @@ include_once __DIR__ . '/CheckCard.php';
     var_dump($register);
   ?>
 
+  <h2>Posizione</h2>
+  <?php
+  
+  ?>
+
 <h2>Controllo carta</h2>
   <?php
     $expired = new CheckCard (5, 2024);
